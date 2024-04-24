@@ -8,7 +8,7 @@ const WeatherButton = ({cities,setcity,currentlocation}) => {
         <Button variant="warning" onClick={()=>currentlocation("current")}>Current Location</Button>
         
         {cities.map((item,index) => (
-            <Button variant="warning" key={index} onClick={()=>setcity(item)}>{item.toUpperCase()}</Button>
+            <Button variant="warning" key={index} onClick={()=>currentlocation(item)}>{item.toUpperCase()}</Button>
         ))}
     </div>
   )
