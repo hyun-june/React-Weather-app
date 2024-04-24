@@ -16,12 +16,10 @@ const cities=["paris","new york","tokyo","seoul"]
 // 6. 데이터를 들고오는 동안 로딩 스피너가 돈다.
 function App() {
   const[weather,setweather] = useState(null);
-  const[city,setcity]=useState("");
+  const[city,setcity]=useState(null);
   const[loading,setloading]=useState(false);
   const[apiError,setAPIError] = useState("");
-
-
-
+  
   const getWeatherData = async(lat,lon)=>{
     try{
       let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&&units=metric`;
@@ -50,15 +48,11 @@ function App() {
     navigator.geolocation.getCurrentPosition((position)=>{
       let lat = position.coords.latitude
       let lon = position.coords.longitude
-
       getWeatherData(lat,lon);
     });
   }
 
 
-
-
-  
   const getWeatherByCity=async()=>{
     try{
       let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&&units=metric`
@@ -76,9 +70,11 @@ function App() {
   }
 
   useEffect(()=>{
-    if(city==""){
+    if(city==null){
+      setloading(true);
       getCurrentLocation();
     } else {
+      setloading(true);
       getWeatherByCity()
     }
   },[city])
@@ -92,7 +88,7 @@ function App() {
       </div>) : 
       (<div className="container">
       <WeatherBox weather={weather}/>
-      <WeatherButton cities={cities} setcity={setcity} currentlocation={currentlocation} />
+      <WeatherButton cities={cities} selectedcity={city} currentlocation={currentlocation} />
       </div>)}
       
     </div>
