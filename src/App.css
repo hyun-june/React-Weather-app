@@ -21,3 +21,24 @@ body {
 }
 
 
+.default{
+    background-color: blanchedalmond;
+}
+
+.clear {
+    background: url(/img/clear.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.clouds {
+    background: url(/img/clouds.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.rain {
+    background: url(/img/rain.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
