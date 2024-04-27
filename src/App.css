@@ -20,6 +20,7 @@ body {
 
 .weather-box{
     border: 3px solid lightpink;
+    margin-top: 10px;
     padding: 50px;
     height: 500px;
     border-radius: 30px;
