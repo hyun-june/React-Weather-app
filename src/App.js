@@ -1,12 +1,12 @@
 import {useEffect, useState} from "react"
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import WeatherBox from "./component/WeatherBox";
 import WeatherButton from "./component/WeatherButton";
 import ClipLoader from "react-spinners/ClipLoader";
 
 const API_KEY = '040347aad8eefbe8027a0cb58edd9c93';
-const cities=["paris","new york","tokyo","seoul"]
+const cities=["paris","new york","tokyo","seoul","vancouver","geneva"]
 
 // 1. 앱이 실행되자마자 현재 위치 기반의 날씨가 보인다.
 // 2. 날씨 정보에는 도시, 섭씨, 화씨, 날씨 상태
@@ -89,7 +89,9 @@ function App() {
       </div>) : 
       (<div className="container">
       <WeatherBox weather={weather}/>
+      <div className="btn-container">
       <WeatherButton cities={cities} selectedcity={city} currentlocation={currentlocation} />
+      </div>
       </div>)}
       
     </div>

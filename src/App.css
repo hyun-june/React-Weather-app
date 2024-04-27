@@ -7,19 +7,81 @@ body {
 
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     flex-direction: column;
+    position: relative;
+}
+
+.btn-container{
+    position: absolute;
+    bottom: 4em;
+    display: flex;
 }
 
 .weather-box{
     border: 3px solid lightpink;
     padding: 50px;
+    height: 500px;
     border-radius: 30px;
     background-color: white;
+    position: relative;
+    color: black;
+    background: url(https://media.istockphoto.com/id/1266632913/ko/%EB%B2%A1%ED%84%B0/%EB%84%A4%EB%B9%84%EA%B2%8C%EC%9D%B4%EC%85%98-%EC%95%B1%EC%9C%BC%EB%A1%9C-%EC%A0%84%ED%99%94%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%8F%99%EC%95%88-%EA%B1%B7%EB%8A%94-%EC%82%AC%EB%9E%8C%EC%9D%98-%EA%B7%B8%EB%A6%BC.jpg?s=612x612&w=0&k=20&c=9UIvCE4ba5_PRWTI1QiKMmbrANAktd0Kkl1TILG_vOY=);
+    background-size:  cover;
+    background-repeat: no-repeat;
 }
 
+#weather-btn {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.weather-monitor{
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+    opacity: 0.94;
+    position: absolute;
+    top : 1em;
+    right: 1em;
+}
+
+.Paris {
+    background: url(https://res.klook.com/image/upload/Mobile/City/swox6wjsl5ndvkv5jvum.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.New-York {
+    background: url(https://i.namu.wiki/i/mhrfwdvG183XHW_hF7maCS8UR3SeX8PZ8kpNBzbFhGEKrq9KrrF8Ehi1S3E-UeZh8ow23miBm9-jDC-3uOf4Og.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Tokyo {
+    background: url(https://a.cdn-hotels.com/gdcs/production34/d497/b8255c6f-fbc1-4733-95e3-9b28deaac126.jpg?impolicy=fcrop&w=800&h=533&q=medium);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Seoul {
+    background: url(https://www.undp.org/sites/g/files/zskgke326/files/2022-06/UNDP_ENGver_CLEAN_4k_2.mp4_000004704.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Vancouver {
+    background: url(https://media.triple.guide/triple-cms/c_limit,h_1024,w_1024/86689c49-aa1f-4374-8ba2-0a772c9b02f2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Geneva {
+    background: url(https://images.velog.io/images/rayleigh/post/954c6464-4894-4b44-b439-96d6c86e7e47/2020100501039_0.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .default{
     background-color: blanchedalmond;
@@ -41,4 +103,33 @@ body {
     background: url(/img/rain.gif);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.drizzle {
+    background: url(/img/drizzle.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media only screen and (max-width:768px) {
+    .weather-monitor {
+        width: 100px;
+        height: 100px;
+        right: 0;
+        top: 0;
+    }
+
+    .weather-box {
+        padding: 10px;
+        height: 300px;
+        color: white;
+    }
+    #weather-btn {
+        margin-top: 0px;
+        margin-right: 5px;
+        color: black;
+        font-size: 13px;
+        font-weight: bold;
+        position: relative;
+    }
 }

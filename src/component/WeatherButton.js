@@ -1,21 +1,22 @@
 import React from 'react';
+import WeatherBox from './WeatherBox';
 import { Button } from 'react-bootstrap';
 
 const WeatherButton = ({ cities, selectedcity, currentlocation }) => {
   
   return (
     <div>
-      <Button
-        variant={`${selectedcity == null ? "light" : "warning"}`}
+      <Button id="weather-btn"
+        variant={`${selectedcity == null ? "warning" : "outline-warning"}`}
         onClick={() => currentlocation("current")}
       >
         Current Location
       </Button>
 
       {cities.map((city) => (
-        <Button
+        <Button id="weather-btn"
           key={city}
-          variant={`${selectedcity == city ? "light" : "warning"}`}
+          variant={`${selectedcity == city ? "warning" : "outline-warning"}`}
           onClick={() => currentlocation(city)}
         >
           {city.toUpperCase()}
